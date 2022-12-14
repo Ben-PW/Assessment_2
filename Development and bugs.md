@@ -146,5 +146,16 @@ def find_bomb(self):
 <a name='fails'></a>
 ## Failed implementations
 
+**Implementing a GUI and animation**
+
+I attempted to implement a GUI using Tkinter (see iteration 7 folder). I intended to animate the environment as it was appended to by the bacteria, allowing the user to watch as the denisty plot was constructed. Unfortunately, for 'model7_animation_attempt.py' this animation runs without being tied to the run function. Additionally, the animation attempts to display the bacteria, which is not informative due to their density being the variable of interest. 
+
+In the GUI attempt (model7_GUI_attempt.py), the GUI appeared to work insofar that the running of the model was tied to interacting with the GUI. However, the ouput was not rendered in the GUI.
+
+One complication in doing this was that this project was performed over two different devices. Potentially due to hardware limitations on the first device, when these implementations were first attempted, the code would not run and gave errors. The second device I used did not have these limitations and managed to actually run the code in iteration 7 without giving errors, however I only discovered this at the final stage of this project as I gained access to the new device after I had already marked iteration 7 as a failed implementation. 
+
+Given more time, I would have liked to work out the issues with the GUI and animation implementation, however this was not feasible in the time frame left to me.
+
+
 
 
