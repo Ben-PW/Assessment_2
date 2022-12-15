@@ -106,16 +106,16 @@ This section details current bugs or issues with the final version of the code. 
 **Bomb location = Environment[0][0]: Better_bomb_9, bomb2.py**
 
 
-This issue only applies if the unique value representing the bomb (within the 2D array representing the environment) is the first value within the first list checked by the code. This is due to how the find_bomb() method within the bomb class locates the unique value; find_bomb() loops through the array checking that each value is the same as the last. When a change is detected, the loop returns the index of the point causing the change. This is done by limiting the loop to run only whilst the number of changes detected is less than 2. 
+This issue only applies if the unique value representing the bomb (within the 2D array representing the environment) is the first value within the first list checked by the code. This is due to how the find_bomb() method within the bomb class locates the unique value; find_bomb() loops through the array checking that each value is the same as the last. When a change is detected, the loop returns the index of the point causing the change. However, this originally led to find_bomb() returning bomb_index[i][j+1], as this was the last 'change' detected by the code. I solved this by limiting the loop to run only whilst the number of changes detected is less than 2. 
 
-This means that, if the unique value was the very first value checked by the loop, it would not return Environment[0][0] as the index, but rather Environment[0][1], as this was the point at which the value 'changed' as far as the find_bomb() method is concerned. This issue could potentially be solved by calling a count method each time a new value was detected, and then selecting the value with the lowest count at the end of the loop, however due to time constraints I wasn't able to implement this
+This means that, if the unique value was the very first value checked by the loop, it would not return Environment[0][0] as the index, but rather Environment[0][1], as this was the first point at which the current value differed from the previous one as far as the find_bomb() method is concerned. This issue could potentially be solved by calling a count method each time a new value was detected, and then selecting the value with the lowest count at the end of the loop, however due to time constraints I wasn't able to implement this
 
 
 **Multiple bomb locations: Better_bomb_9, bomb2.py**
 
 This issue applies if more than one unique value is present within the 2D array. The current find_bomb() will return the first unique value found and terminate at that point. 
 
-The code for find_bomb() is included below for reference (documentation omitted):
+The code for find_bomb() is included below for reference (function level standard documentation omitted):
 
 ```Ruby
 def find_bomb(self):
