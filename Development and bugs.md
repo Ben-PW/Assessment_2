@@ -85,7 +85,7 @@ Testing for bugs was primarily accomplished through print and count statements t
 
 An example of this is that bacteria are coded to append +15 to their location when they land, rather than 1. This is due to the colour scaling employed by the matplotlib.pyplot call. Whilst, initially, it appeared that bacteria were not appending to the environment as there was no discernable difference in the rendered pyplot, this was actually due to the difference between the bomb location value (255) and the cumulative value of multiple bacteria landing in one location (e.g 15). I found this as the print statements indicated that the environment was being appended to, and applying the the find_vals() function (see model6.py in Remove_input_req_6) to the environment after the model had been run indicated that values in the array had indeed been changed. The plotting function did not actually render the colour change caused by the bacteria landing as the difference in numerical value was so large. This led to bacteria appending the environment by 15 when they landed. 
 
-This was also how the changes < 2 restriction was applied to the find_bomb() method in the bomb2.Bomb class. Print statements indicated it was returning the index after the bomb location due to a flaw in the code.
+This was also how the changes < 2 restriction was applied to the find_bomb() method in the bomb2.Bomb class. Print statements indicated it was returning the index after the bomb location due to a flaw in the code detailed [here](#issues).
 
 Testing for efficiency was accomplished by implementing the time.time() method. Time was calculated before and after key functions to determine how long they were taking. 
 
