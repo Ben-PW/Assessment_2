@@ -18,6 +18,7 @@ This file contains information regarding the testing and development process beh
 * [Testing](#test)
 * [Issues and bugs](#issues)
 * [Failed implementations](#fails)
+* [Future directions](#future)
 &nbsp;
 <a name='process'></a>
 ## Development process
@@ -155,6 +156,11 @@ In the GUI attempt (model7_GUI_attempt.py), the GUI appeared to work insofar tha
 One complication in doing this was that this project was performed over two different devices. Potentially due to hardware limitations on the first device, when these implementations were first attempted, the code would not run and gave errors. This could be related to forum posts on stackoverflow indicating that the error messages my code was giving may have been related to [memory issues](https://stackoverflow.com/questions/73892881/error-fail-to-create-pixmap-with-tk-getpixmap-in-tkimgphotoinstancesetsize-wh). Forum users recommended switching from the 'TkAgg' backend to the 'Agg' backend, however this led to further issues which I was unable to solve on the old device. The second device I used did not have these limitations and managed to actually run the code in iteration 7 without giving errors, however I only discovered this at the final stage of this project, as I gained access to the new device after I had already marked iteration 7 as a failed implementation. 
 
 Given more time, I would have liked to work out the issues with the GUI and animation implementation, however this was not feasible in the time frame left to me.
+&nbsp;
+<a name='future'></a>
+## Future directions
+
+I would like to have properly implemented a GUI for this project. I believe the main issue with my code for this in the iteration 7 folder was that I could not find a way to set the plot of the environment as the canvas for the Tkinter GUI, and have it update with each stage of the model. Solving this would have hopefully allowed me to animate the model and allow the user to interact that way. 
 
 
 
