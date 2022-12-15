@@ -160,7 +160,7 @@ Given more time, I would have liked to work out the issues with the GUI and anim
 <a name='future'></a>
 ## Future directions
 
-I would like to have properly implemented a GUI for this project. I believe the main issue with my code for this in the iteration 7 folder was that I could not find a way to set the plot of the environment as the canvas for the Tkinter GUI, and have it update with each stage of the model. Solving this would have hopefully allowed me to animate the model and allow the user to interact that way. 
+I would like to have properly implemented a GUI for this project. I believe the main issue with my code for this in the iteration 7 folder was that I could not find a way to set the plot of the environment as the canvas for the Tkinter GUI (see [this stack overflow thread](https://stackoverflow.com/questions/25498937/embed-a-pyplot-in-a-tkinter-window-and-update-it) for a someone witha similar question), and have it update with each stage of the model. Solving this would have hopefully allowed me to animate the model and allow the user to interact that way. 
 
 
 
