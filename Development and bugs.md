@@ -160,8 +160,44 @@ Given more time, I would have liked to work out the issues with the GUI and anim
 <a name='future'></a>
 ## Future directions
 
+**GUI**  
 I would like to have properly implemented a GUI for this project. I believe the main issue with my code for this in the iteration 7 folder was that I could not find a way to set the plot of the environment as the canvas for the Tkinter GUI (see [this stack overflow thread](https://stackoverflow.com/questions/25498937/embed-a-pyplot-in-a-tkinter-window-and-update-it) for a someone witha similar question), and have it update with each stage of the model. Solving this would have hopefully allowed me to animate the model and allow the user to interact that way. 
 
+**Automatic plot scaling**  
+Another aspect of the code I was interested in was to create a function that would calculate the appropriate matplotlib.pyplot x and y axes. The idea behind this was, if the find_bomb() method could determine the unique point automatically, then the numerical value of the surrounding, non-unique points could also be stored. After iterating the behaviour of the bacteria in the script, a function could be written to calculate the spread of the agents, id est find the list with the earliest appended value and find the index within the list of said value (min x coordinate), doing the same for the list with the furthest appended value (max x coordinate). Then, finding which lists within the array were the first and last to have altered values within them would give maximum and minimum y values. 
 
+My aim here was that these values could be caclulated automatically and passed into the matplotlib.pyplot call, meaning that the rendered graph could be automatically fitted to any size of array and match agents that move a lot or move very little. This would also require changing the code in the bacteria_framework8.py file, as the agents are currently specified to an environment of 300x300 (see below):
 
+```Ruby
+if self.height > 0: # If height is above zero
+
+            if random.random() <= 0.1: # 10% chance to move North
+    
+                self.y = (self.y + 1) % 300
+    
+                #print('y+1')
+    
+            elif random.random() > 0.1 and random.random() <= 0.2: # 10% chance to move South
+    
+                self.y = (self.y - 1) % 300
+    
+                #print('y-1')
+```
+
+however I'm sure this could be achieved by altering this to read something like:
+
+```Ruby
+len1 = len(environment[0]) # max y of environment
+len2 = len(environment[0][0]) # max x of environment assuming all lists are equal length
+
+if self.height > 0: # If height is above zero
+
+            if random.random() <= 0.1: # 10% chance to move North
+    
+                self.y = (self.y + 1) % len1 # then do the same for x with len2
+    
+                #print('y+1')
+```
+
+This last section wasn't implemented in the final code as it wasn't necessary, however I would be very interested in seeing if I could find a way to work the automatic plot scaling idea.  
 
