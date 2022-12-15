@@ -100,7 +100,7 @@ statement at the end of bacteria_framework6.py, which allowed the loop to skip a
 ## Issues and bugs
 
 
-This section details current bugs or issues with the final version of the code. The first section if the title indicates the code or criteria causing the bug, the second section indicates the file it applies to. 
+This section details current bugs or issues with the final version of the code. The first section if the title indicates the code or criteria causing the bug, the second section indicates the file it applies to. Note the bugs detailed here will only be those remaining in the 9th iteration, as this is the version of the code intended to be used. 
 
 
 **Bomb location = Environment[0][0]: Better_bomb_9, bomb2.py**
