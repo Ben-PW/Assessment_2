@@ -5,6 +5,7 @@ For information on development, failed implementations and current issues with c
 
 ## Table of contents
 * [Introduction](#introduction)
+* [Uses of code](#uses)
 * [Running the code](#run)
 * [Description of repo contents](#contents)
 * [License](#license)
@@ -15,9 +16,30 @@ For information on development, failed implementations and current issues with c
 ### Introduction
 The aim of this code is to generate a simulated environment containing a 'bacteria bomb'. This bomb is located on top of a building 75m in the air and, upon detonation, will release 5000 bacteria to drift down to the ground. This script generates the 5000 bacteria and simulates their movement as they descend through the atmosphere. It then stores their location and generates a heat map of where the various bacteria landed. The data represented by this heat map will also be saved as a text file. The final version of this code will function with any 300x300 raster style file with any values, as long as it contains 1 unique value amongst other, identical values. 
 
+<a name='uses'></a>
+### Uses of code
+This code could be used by anyone wanting to model simple movement of agents from a designated point. By making the find bomb function applicable to any data values (not just the 255 specified in the brief), and making other functions part of a designated class, I hoped to make this code easier for someone to reuse in another setting. In theory, all a prospective user would need to do would be to designate their RASTER file of choice as 'a' in the source code and the model should run with no fatal errors (see below):
+
+```Ruby
+a = 'wind.raster' # Define as 'a' to pass to class
+environment = [] # Will contain data representing environment
+
+# Helper has methods to read/write environment and find bomb location
+helper = bomb2.Bomb(a, environment)
+```
+
+The values necessary to perform the code are acted upon by the class methods as attributes of that class, so method calls simply involve specifying which method is required:
+
+```Ruby
+
+y = helper.find_bomb()[0] # access first value of bomb index (y coordinate of bomb)
+x = helper.find_bomb()[1] # access second value of bomb index (x coordinate of bomb)
+```
+Multiple unique values would not necessarily present an issue, however the bomb location would be assigned to the first one found after environment[0][0], ignoring the rest. 
+
 <a name='run'></a>
 ### Running the code
-To run any of the functional versions of this code (all excluding verisions 1 and 7), simply download all of the files contained within the folder of the version you would like to run. Store these files in a common folder on your device. From there, run the file titled 'model[iteration number]', either through a Python IDE or directly via the command line. The model file will import the relevant files from the folder it is saved in and save the output as a text file entitled 'out.txt' in that same folder. You could also use your own raster file! As long as the file contains duplicates of the same value with one 'odd one out', the code will treat the odd value as the bomb location. Please note, however, that the plotting functions are built around the current source data, so adjusting the plot x and y axes may be required oif you use your own. 
+To run any of the functional versions of this code (all excluding verisions 1 and 7), simply download all of the files contained within the folder of the version you would like to run. Store these files in a common folder on your device. From there, run the file titled 'model[iteration number]', either through a Python IDE or directly via the command line. The model file will import the relevant files from the folder it is saved in and save the output as a text file entitled 'out.txt' in that same folder. You could also use your own raster file! As long as the file contains duplicates of the same value with one 'odd one out', the code will treat the odd value as the bomb location. Please note, however, that the plotting functions are built around the current source data, so adjusting the plot x and y axes may be required if you use your own. 
 
 <a name="contents"></a>
 ### Description of repo contents
