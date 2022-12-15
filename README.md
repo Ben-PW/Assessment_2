@@ -1,7 +1,7 @@
 # Assessment_2
 Repo for second assessment in Andy Turner's module
 
-For information on development, failed implementations and current issues with code, see [Development and bugs](https://github.com/Ben-PW/Assessment_2/blob/main/Development%20and%20bugs.md)
+For information on development, failed implementations, current issues with code and ideas for future development, see [Development and bugs](https://github.com/Ben-PW/Assessment_2/blob/main/Development%20and%20bugs.md)
 
 ## Table of contents
 * [Introduction](#introduction)
